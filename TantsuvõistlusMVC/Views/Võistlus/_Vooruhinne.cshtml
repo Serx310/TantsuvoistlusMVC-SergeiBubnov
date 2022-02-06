@@ -1,0 +1,36 @@
+﻿@model IEnumerable<TantsuvõistlusMVC.Models.Võistlus>
+
+
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Tantsupaari_Nimi)
+            </th>
+            <th>
+                @ViewData["Title"]
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tantsupaari_Nimi)
+                </td>
+                <td>
+                    <a asp-action="HindaPaari" asp-route-id="@item.Id" asp-route-voor='@ViewData["Voor"]' asp-route-tulemus="1">1</a> |
+                    <a asp-action="HindaPaari" asp-route-id="@item.Id" asp-route-osa='@ViewData["Voor"]' asp-route-tulemus="2">2</a> |
+                    <a asp-action="HindaPaari" asp-route-id="@item.Id" asp-route-voor='@ViewData["Voor"]' asp-route-tulemus="3">3</a> |
+                    <a asp-action="HindaPaari" asp-route-id="@item.Id" asp-route-osa='@ViewData["Voor"]' asp-route-tulemus="4">4</a> |
+                    <a asp-action="HindaPaari" asp-route-id="@item.Id" asp-route-osa='@ViewData["Voor"]' asp-route-tulemus="5">5</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
