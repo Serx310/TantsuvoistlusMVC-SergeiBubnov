@@ -14,5 +14,6 @@ namespace TantsuvõistlusMVC.Data
         {
         }
         public DbSet<TantsuvõistlusMVC.Models.Võistlus> Võistlus { get; set; }
+        public DbSet<TantsuvõistlusMVC.Models.KeskmineHinneViewModel> KeskmineHinneViewModel { get; set; }
     }
 }

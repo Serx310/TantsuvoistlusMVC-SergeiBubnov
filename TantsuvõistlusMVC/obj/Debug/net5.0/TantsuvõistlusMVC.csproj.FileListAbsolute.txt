@@ -167,3 +167,4 @@ C:\Users\serge\source\repos\TantsuvõistlusMVC\TantsuvõistlusMVC\obj\Debug\net5
 C:\Users\serge\source\repos\TantsuvõistlusMVC\TantsuvõistlusMVC\obj\Debug\net5.0\Razor\Views\Võistlus\Voor1.cshtml.g.cs
 C:\Users\serge\source\repos\TantsuvõistlusMVC\TantsuvõistlusMVC\obj\Debug\net5.0\Razor\Views\Võistlus\Voor2.cshtml.g.cs
 C:\Users\serge\source\repos\TantsuvõistlusMVC\TantsuvõistlusMVC\obj\Debug\net5.0\Razor\Views\Võistlus\Voor3.cshtml.g.cs
+C:\Users\serge\source\repos\TantsuvõistlusMVC\TantsuvõistlusMVC\obj\Debug\net5.0\Razor\Views\Võistlus\Koondhinne.cshtml.g.cs

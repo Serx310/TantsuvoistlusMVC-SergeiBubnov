@@ -180,7 +180,7 @@ namespace TantsuvõistlusMVC.Controllers
                     }
                 case nameof(paar.Voor3):
                     {
-                        paar.Voor2 = tulemus;
+                        paar.Voor3 = tulemus;
                         break;
                     }
                 default:
@@ -208,6 +208,22 @@ namespace TantsuvõistlusMVC.Controllers
             }
             return RedirectToAction(voor);
         }
+
+        // GET: Eksams/Luba
+        public async Task<IActionResult> Koondhinne()
+        {
+            var model = _context.Võistlus.Select(e => new KeskmineHinneViewModel()
+            {
+                Id = e.Id,
+                Tantsupaari_Nimi = e.Tantsupaari_Nimi,
+                Voor1 = e.Voor1 == 0 ? "Hindamata" : $"{e.Voor1}",
+                Voor2 = e.Voor2 == 0 ? "Hindamata" : $"{e.Voor2}",
+                Voor3 = e.Voor3 == 0 ? "Hindamata" : $"{e.Voor3}",
+                KeskmineHinne = (e.Voor1+e.Voor2+e.Voor3)/3
+            });
+            return View(await model.ToListAsync());
+        }
+
 
         // GET: Võistlus/Delete/5
         public async Task<IActionResult> Delete(int? id)
