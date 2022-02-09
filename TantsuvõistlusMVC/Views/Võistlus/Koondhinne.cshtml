@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Koondleht";
+    var loendur = 1;
 }
 
 <h1>Koondleht</h1>
@@ -10,6 +11,9 @@
 <table class="table">
     <thead>
         <tr>
+            <th>
+                Koht
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Tantsupaari_Nimi)
             </th>
@@ -29,24 +33,32 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.OrderByDescending(item => item.KeskmineHinne)) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tantsupaari_Nimi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Voor1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Voor2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Voor3)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.KeskmineHinne)
-            </td>
-        </tr>
-}
+         
+        @foreach (var item in Model.OrderByDescending(item => item.KeskmineHinne))
+        {
+            <tr>
+                <td>
+                    @loendur
+                    @{loendur++;}
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tantsupaari_Nimi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Voor1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Voor2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Voor3)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KeskmineHinne)
+                </td>
+            </tr>
+        }
+
     </tbody>
 </table>

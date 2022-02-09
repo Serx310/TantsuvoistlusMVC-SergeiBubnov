@@ -14,12 +14,12 @@ namespace TantsuvõistlusMVC.Models
         [Display(Name = "Tantsupaar")]
         public string Tantsupaari_Nimi { get; set; }
         [Display(Name = "I Voor")]
-        public string Voor1 { get; set; }
+        public int Voor1 { get; set; }
         [Display(Name = "II Voor")]
-        public string Voor2 { get; set; }
+        public int Voor2 { get; set; }
         [Display(Name = "III Voor")]
-        public string Voor3 { get; set; }
+        public int Voor3 { get; set; }
         [Display(Name = "Keskmine hinne")]
-        public int KeskmineHinne { get; set; }
+        public double KeskmineHinne { get; set; }
     }
 }

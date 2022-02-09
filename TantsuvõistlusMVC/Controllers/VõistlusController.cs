@@ -50,13 +50,13 @@ namespace TantsuvõistlusMVC.Controllers
         // GET: Võistlus/Voor2
         public async Task<IActionResult> Voor2()
         {
-            var model = _context.Võistlus.Where(e => e.Voor1 > 0 && e.Voor2 == 0);
+            var model = _context.Võistlus.Where(e => e.Voor2 == 0);
             return View(await model.ToListAsync());
         }
         // GET: Võistlus/Voor3
         public async Task<IActionResult> Voor3()
         {
-            var model = _context.Võistlus.Where(e => e.Voor1 > 0 && e.Voor2 > 0 && e.Voor3 == 0);
+            var model = _context.Võistlus.Where(e => e.Voor3 == 0);
             return View(await model.ToListAsync());
         }
 
@@ -216,10 +216,10 @@ namespace TantsuvõistlusMVC.Controllers
             {
                 Id = e.Id,
                 Tantsupaari_Nimi = e.Tantsupaari_Nimi,
-                Voor1 = e.Voor1 == 0 ? "Hindamata" : $"{e.Voor1}",
-                Voor2 = e.Voor2 == 0 ? "Hindamata" : $"{e.Voor2}",
-                Voor3 = e.Voor3 == 0 ? "Hindamata" : $"{e.Voor3}",
-                KeskmineHinne = (e.Voor1+e.Voor2+e.Voor3)/3
+                Voor1 = e.Voor1 ,
+                Voor2 = e.Voor2 ,
+                Voor3 = e.Voor3 ,
+                KeskmineHinne = (e.Voor1 + e.Voor2 + e.Voor3)/3.0
             });
             return View(await model.ToListAsync());
         }
